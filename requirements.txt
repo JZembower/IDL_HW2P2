@@ -1,0 +1,17 @@
+# HW2P2 local env. CUDA 12.8 wheels for the RTX 4060.
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+wandb==0.23.1
+kaggle==1.8.0
+torchsummary
+torchinfo
+pytorch_metric_learning
+scikit-learn
+scipy
+pandas
+matplotlib
+tqdm
+ipykernel
+Pillow

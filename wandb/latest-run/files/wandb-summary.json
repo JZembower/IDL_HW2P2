@@ -1,0 +1,1 @@
+{"arcface_m":0.4,"valid_loss":2.4831128416682136,"valid_ret_acc":97.5,"valid_eer":3.4623217922608736,"_wandb":{"runtime":11870},"train_cls_acc":98.11456787833828,"train_loss":1.1137716439428245,"valid_cls_acc":93.41396539451102,"_timestamp":1.7911314975847225e+09,"valid_combined_score":94.97582180112508,"_step":49,"_runtime":11870.604454535,"lr":0.00010705383806982605}

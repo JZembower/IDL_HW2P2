@@ -1,0 +1,33 @@
+{
+  "run_name": "run2_resnet34_arcface",
+  "data_root": "/local/hw2p2_data",
+  "batch_size": 256,
+  "lr": 0.1,
+  "warmup_epochs": 2,
+  "epochs": 50,
+  "num_classes": 8631,
+  "augument": true,
+  "random_erasing": 0.25,
+  "weight_decay": 0.0005,
+  "label_smoothing": 0.0,
+  "blocks": [
+    3,
+    4,
+    6,
+    3
+  ],
+  "channels": [
+    64,
+    128,
+    256,
+    512
+  ],
+  "embedding_dim": 512,
+  "dropout": 0.2,
+  "arcface_s": 32.0,
+  "arcface_m": 0.4,
+  "margin_warmup_epochs": 5,
+  "resume": true,
+  "num_workers": 5,
+  "checkpoint_dir": "./checkpoints/run2_resnet34_arcface"
+}

@@ -1,0 +1,56 @@
+{
+  "run_name": "run1_baseline_cnn5",
+  "description": "Checkpoint-baseline 5-layer CNN from the writeup FAQ. Trained locally (RTX 4060 Laptop).",
+  "git_commit": "15cfe4c",
+  "wandb": {"project": "hw2p2", "name": "RunOne", "run_id": "dbo7trqy", "local_dir": "wandb/run-20261002_111659-dbo7trqy"},
+  "kaggle_public_score": 87.33,
+  "config": {
+    "batch_size": 256,
+    "lr": 0.1,
+    "epochs": 20,
+    "num_classes": 8631,
+    "augument": true,
+    "weight_decay": 0.0005,
+    "label_smoothing": 0.1
+  },
+  "architecture": {
+    "params": 15127031,
+    "backbone": [
+      "Conv2d(3,64,k7,s4,p3)+BN+ReLU",
+      "Conv2d(64,128,k3,s2,p1)+BN+ReLU",
+      "Conv2d(128,256,k3,s2,p1)+BN+ReLU",
+      "Conv2d(256,512,k3,s2,p1)+BN+ReLU",
+      "Conv2d(512,1024,k3,s2,p1)+BN+ReLU",
+      "AdaptiveAvgPool2d(1)+Flatten"
+    ],
+    "head": "Linear(1024, 8631)",
+    "embedding": "1024-d pooled backbone output (feats)"
+  },
+  "training": {
+    "loss": "CrossEntropyLoss(label_smoothing=0.1)",
+    "optimizer": "SGD(momentum=0.9, nesterov=True, weight_decay=5e-4)",
+    "scheduler": "CosineAnnealingLR(T_max=20), stepped per epoch",
+    "amp": true,
+    "augmentations": ["Resize(112)", "RandomResizedCrop(112, scale=(0.8,1.0), ratio=(0.9,1.1))", "RandomHorizontalFlip(0.5)", "ColorJitter(0.2,0.2,0.2)", "Normalize(0.5,0.5)"]
+  },
+  "final_epoch_metrics": {
+    "epoch": 19,
+    "train_cls_acc": 88.83,
+    "train_loss": 2.359,
+    "valid_cls_acc": 79.89,
+    "valid_loss": 2.751,
+    "valid_ret_acc": 94.90,
+    "valid_eer": 5.295,
+    "valid_combined_score": 87.30
+  },
+  "files": {
+    "best_combined.pth": "epoch 19 (used for submission)",
+    "best_cls.pth": "epoch 19",
+    "best_ret.pth": "epoch 18",
+    "last.pth": "epoch 19",
+    "submission.csv": "merged Kaggle submission",
+    "cls_submission.csv": "classification component",
+    "ver_submission.csv": "verification component"
+  },
+  "reload": "Rebuild the 5-layer Network from git commit 15cfe4c (notebook cell 'Model Architecture'), then load_model(model, path='checkpoints/run1_baseline_cnn5/best_combined.pth')."
+}

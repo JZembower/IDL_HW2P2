@@ -1,0 +1,20 @@
+{
+  "run_name": "run2_resnet34_arcface",
+  "description": "ResNet-34 layout (BasicBlocks [3,4,6,3], 3x3 stride-1 stem, 112->7) + BN embedding head + ArcFace(s=32, m=0.4, margin warmup 5 ep). Trained on PSC Bridges-2 V100.",
+  "config_file": "run_config.json",
+  "slurm_job": 47408105,
+  "log": "run2-47408105.out",
+  "wandb": {"project": "hw2p2", "name": "run2_resnet34_arcface", "local_dir": "wandb/run-20261004_091642-1shohajx"},
+  "params": 25963456,
+  "epochs": 50,
+  "minutes_per_epoch": 4.1,
+  "best_combined": {"epoch": 47, "valid_cls_acc": 93.21, "valid_eer": 3.055, "valid_eer_flip_tta": 3.055, "valid_combined_score": 95.08},
+  "final_epoch": {"epoch": 50, "train_cls_acc": 98.11, "valid_cls_acc": 93.41, "valid_eer": 3.462, "valid_combined_score": 94.98},
+  "best_eer_epoch": {"epoch": 20, "valid_eer": 2.04},
+  "kaggle": {"submission_ref": 56829340, "public_score": 95.74, "submitted_file": "submission.csv"},
+  "observations": [
+    "Train/val accuracy gap grew to ~5 points (98.1 vs 93.4): late-epoch overfitting.",
+    "Val EER bottomed at 2.04% around epoch 20 and drifted up to 3.46% by epoch 50.",
+    "Classification error costs ~3.4 score points, EER ~1.5."
+  ]
+}

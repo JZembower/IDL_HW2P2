@@ -1,0 +1,109 @@
+{
+  "run_name": "run3_seresnet34_ema",
+  "description": "SE-ResNet-34 (BasicBlocks [3,4,6,3] with Squeeze-and-Excitation) + BN embedding head + ArcFace(s=32, m=0.4). Adds stochastic depth 0.1, weight EMA 0.9998 (EMA weights validated/checkpointed/submitted), RandomGrayscale 0.1, 70 epochs. Trained on PSC Bridges-2 V100-16GB.",
+  "launch_config_on_psc": {
+    "run_name": "run3_seresnet34_ema",
+    "data_root": "/local/hw2p2_data",
+    "batch_size": 256,
+    "lr": 0.1,
+    "warmup_epochs": 2,
+    "epochs": 70,
+    "num_classes": 8631,
+    "augument": true,
+    "random_erasing": 0.25,
+    "grayscale": 0.1,
+    "weight_decay": 0.0005,
+    "label_smoothing": 0.0,
+    "blocks": [
+      3,
+      4,
+      6,
+      3
+    ],
+    "channels": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "embedding_dim": 512,
+    "dropout": 0.2,
+    "se": true,
+    "drop_path": 0.1,
+    "ema_decay": 0.9998,
+    "arcface_s": 32.0,
+    "arcface_m": 0.4,
+    "margin_warmup_epochs": 5,
+    "resume": true,
+    "num_workers": 5,
+    "checkpoint_dir": "./checkpoints/run3_seresnet34_ema"
+  },
+  "train_script": {
+    "file": "psc/train.py",
+    "md5": "9048efeefa8f1e0589aeb7aba1f347b4",
+    "job_file": "psc/run3.sbatch",
+    "generated_from": "F26 HW2P2 Student Starter Notebook_final.ipynb via psc/make_train_script.py"
+  },
+  "slurm_jobs": [
+    {
+      "job": 47450767,
+      "what": "SMOKE=1 end-to-end check",
+      "log": "run3-47450767.out",
+      "result": "SMOKE TEST PASSED"
+    },
+    {
+      "job": 47457970,
+      "what": "epochs 1-51",
+      "log": "run3-47457970.out",
+      "result": "TIMEOUT at 4h (expected); last.pth = epoch 51"
+    },
+    {
+      "job": 47487551,
+      "what": "resume, epochs 52-70 + inference",
+      "log": "run3-47487551.out",
+      "result": "COMPLETED"
+    }
+  ],
+  "wandb": {
+    "project": "hw2p2",
+    "name": "run3_seresnet34_ema",
+    "run_id": "hydfzd13",
+    "local_dirs": [
+      "wandb/run-20261006_152819-hydfzd13",
+      "wandb/run-20261007_054950-hydfzd13"
+    ]
+  },
+  "params": 26124652,
+  "epochs": 70,
+  "best_combined": {
+    "epoch": 59,
+    "weights": "EMA",
+    "valid_cls_acc": 94.186,
+    "valid_eer": 2.037,
+    "valid_eer_flip_tta": 2.037,
+    "valid_combined_score": 96.075
+  },
+  "final_epoch": {
+    "epoch": 70,
+    "train_cls_acc": 97.18,
+    "valid_cls_acc": 94.19,
+    "valid_eer": 2.36,
+    "valid_combined_score": 95.92
+  },
+  "kaggle": {
+    "submission_ref": 56925803,
+    "public_score": 96.41383,
+    "submitted_file": "submission.csv"
+  },
+  "vs_run2": {
+    "run2_valid_combined": 95.08,
+    "run2_kaggle_public": 95.74,
+    "test_cls_agreement_pct": 93.9,
+    "test_ver_score_corr": 0.968
+  },
+  "observations": [
+    "Train accuracy stayed below val accuracy until ~epoch 60 (drop path + augmentation), unlike run two's 98/93 gap.",
+    "Val EER held at ~2.0-2.4% through the end instead of drifting up as in run two.",
+    "Val combined peaked at epochs 59-60 (96.08) and eased to 95.92 by epoch 70; best_combined selection kept epoch 59."
+  ]
+}

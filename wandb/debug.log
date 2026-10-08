@@ -1,23 +1,24 @@
-2026-10-04 09:16:42,061 INFO    MainThread:66144 [wandb_setup.py:_flush():80] Current SDK version is 0.23.1
-2026-10-04 09:16:42,062 INFO    MainThread:66144 [wandb_setup.py:_flush():80] Configure stats pid to 66144
-2026-10-04 09:16:42,062 INFO    MainThread:66144 [wandb_setup.py:_flush():80] Loading settings from /jet/home/zembower/.config/wandb/settings
-2026-10-04 09:16:42,062 INFO    MainThread:66144 [wandb_setup.py:_flush():80] Loading settings from /jet/home/zembower/wandb/settings
-2026-10-04 09:16:42,062 INFO    MainThread:66144 [wandb_setup.py:_flush():80] Loading settings from environment variables
-2026-10-04 09:16:42,062 INFO    MainThread:66144 [wandb_init.py:setup_run_log_directory():714] Logging user logs to /jet/home/zembower/wandb/run-20261004_091642-1shohajx/logs/debug.log
-2026-10-04 09:16:42,062 INFO    MainThread:66144 [wandb_init.py:setup_run_log_directory():715] Logging internal logs to /jet/home/zembower/wandb/run-20261004_091642-1shohajx/logs/debug-internal.log
-2026-10-04 09:16:42,062 INFO    MainThread:66144 [wandb_init.py:init():841] calling init triggers
-2026-10-04 09:16:42,063 INFO    MainThread:66144 [wandb_init.py:init():846] wandb.init called with sweep_config: {}
-config: {'run_name': 'run2_resnet34_arcface', 'data_root': '/local/hw2p2_data', 'batch_size': 256, 'lr': 0.1, 'warmup_epochs': 2, 'epochs': 50, 'num_classes': 8631, 'augument': True, 'random_erasing': 0.25, 'weight_decay': 0.0005, 'label_smoothing': 0.0, 'blocks': [3, 4, 6, 3], 'channels': [64, 128, 256, 512], 'embedding_dim': 512, 'dropout': 0.2, 'arcface_s': 32.0, 'arcface_m': 0.4, 'margin_warmup_epochs': 5, 'resume': True, 'num_workers': 5, 'checkpoint_dir': './checkpoints/run2_resnet34_arcface', '_wandb': {}}
-2026-10-04 09:16:42,063 INFO    MainThread:66144 [wandb_init.py:init():889] starting backend
-2026-10-04 09:16:46,906 INFO    MainThread:66144 [wandb_init.py:init():892] sending inform_init request
-2026-10-04 09:16:46,927 INFO    MainThread:66144 [wandb_init.py:init():900] backend started and connected
-2026-10-04 09:16:47,288 INFO    MainThread:66144 [wandb_init.py:init():970] updated telemetry
-2026-10-04 09:16:47,289 INFO    MainThread:66144 [wandb_init.py:init():994] communicating run to backend with 90.0 second timeout
-2026-10-04 09:16:47,708 INFO    MainThread:66144 [wandb_init.py:init():1041] starting run threads in backend
-2026-10-04 09:16:52,000 INFO    MainThread:66144 [wandb_run.py:_console_start():2521] atexit reg
-2026-10-04 09:16:52,000 INFO    MainThread:66144 [wandb_run.py:_redirect():2369] redirect: wrap_raw
-2026-10-04 09:16:52,000 INFO    MainThread:66144 [wandb_run.py:_redirect():2438] Wrapping output streams.
-2026-10-04 09:16:52,000 INFO    MainThread:66144 [wandb_run.py:_redirect():2461] Redirects installed.
-2026-10-04 09:16:52,040 INFO    MainThread:66144 [wandb_init.py:init():1081] run started, returning control to user process
-2026-10-04 12:34:38,215 INFO    wandb-AsyncioManager-main:66144 [service_client.py:_forward_responses():80] Reached EOF.
-2026-10-04 12:34:38,216 INFO    wandb-AsyncioManager-main:66144 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.
+2026-10-07 05:49:50,275 INFO    MainThread:48295 [wandb_setup.py:_flush():80] Current SDK version is 0.23.1
+2026-10-07 05:49:50,276 INFO    MainThread:48295 [wandb_setup.py:_flush():80] Configure stats pid to 48295
+2026-10-07 05:49:50,276 INFO    MainThread:48295 [wandb_setup.py:_flush():80] Loading settings from /jet/home/zembower/.config/wandb/settings
+2026-10-07 05:49:50,276 INFO    MainThread:48295 [wandb_setup.py:_flush():80] Loading settings from /jet/home/zembower/wandb/settings
+2026-10-07 05:49:50,276 INFO    MainThread:48295 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2026-10-07 05:49:50,276 INFO    MainThread:48295 [wandb_init.py:setup_run_log_directory():714] Logging user logs to /jet/home/zembower/wandb/run-20261007_054950-hydfzd13/logs/debug.log
+2026-10-07 05:49:50,276 INFO    MainThread:48295 [wandb_init.py:setup_run_log_directory():715] Logging internal logs to /jet/home/zembower/wandb/run-20261007_054950-hydfzd13/logs/debug-internal.log
+2026-10-07 05:49:50,276 INFO    MainThread:48295 [wandb_init.py:init():841] calling init triggers
+2026-10-07 05:49:50,276 INFO    MainThread:48295 [wandb_init.py:init():846] wandb.init called with sweep_config: {}
+config: {'run_name': 'run3_seresnet34_ema', 'data_root': '/local/hw2p2_data', 'batch_size': 256, 'lr': 0.1, 'warmup_epochs': 2, 'epochs': 70, 'num_classes': 8631, 'augument': True, 'random_erasing': 0.25, 'grayscale': 0.1, 'weight_decay': 0.0005, 'label_smoothing': 0.0, 'blocks': [3, 4, 6, 3], 'channels': [64, 128, 256, 512], 'embedding_dim': 512, 'dropout': 0.2, 'se': True, 'drop_path': 0.1, 'ema_decay': 0.9998, 'arcface_s': 32.0, 'arcface_m': 0.4, 'margin_warmup_epochs': 5, 'resume': True, 'num_workers': 5, 'checkpoint_dir': './checkpoints/run3_seresnet34_ema', '_wandb': {}}
+2026-10-07 05:49:50,276 INFO    MainThread:48295 [wandb_init.py:init():889] starting backend
+2026-10-07 05:49:56,401 INFO    MainThread:48295 [wandb_init.py:init():892] sending inform_init request
+2026-10-07 05:49:56,475 INFO    MainThread:48295 [wandb_init.py:init():900] backend started and connected
+2026-10-07 05:49:57,287 INFO    MainThread:48295 [wandb_init.py:init():970] updated telemetry
+2026-10-07 05:49:57,287 INFO    MainThread:48295 [wandb_init.py:init():994] communicating run to backend with 90.0 second timeout
+2026-10-07 05:49:57,703 INFO    MainThread:48295 [wandb_init.py:init():1036] run resumed
+2026-10-07 05:49:57,704 INFO    MainThread:48295 [wandb_init.py:init():1041] starting run threads in backend
+2026-10-07 05:50:02,310 INFO    MainThread:48295 [wandb_run.py:_console_start():2521] atexit reg
+2026-10-07 05:50:02,311 INFO    MainThread:48295 [wandb_run.py:_redirect():2369] redirect: wrap_raw
+2026-10-07 05:50:02,311 INFO    MainThread:48295 [wandb_run.py:_redirect():2438] Wrapping output streams.
+2026-10-07 05:50:02,311 INFO    MainThread:48295 [wandb_run.py:_redirect():2461] Redirects installed.
+2026-10-07 05:50:02,347 INFO    MainThread:48295 [wandb_init.py:init():1081] run started, returning control to user process
+2026-10-07 07:21:09,205 INFO    wandb-AsyncioManager-main:48295 [service_client.py:_forward_responses():80] Reached EOF.
+2026-10-07 07:21:09,206 INFO    wandb-AsyncioManager-main:48295 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.

@@ -1,0 +1,6 @@
+{"time":"2026-10-06T15:28:24.176734698-04:00","level":"INFO","msg":"main: starting server","port-filename":"/var/tmp/tmp_b16j_ku/port-42904.txt","pid":42904,"log-level":0,"disable-analytics":false,"shutdown-on-parent-exit":false,"enable-dcgm-profiling":false}
+{"time":"2026-10-06T15:28:24.181687478-04:00","level":"INFO","msg":"server: will exit if parent process dies","ppid":42904}
+{"time":"2026-10-06T15:28:24.18159444-04:00","level":"INFO","msg":"server: accepting connections","addr":{"Name":"/var/tmp/wandb-42904-43591-1811554624/socket","Net":"unix"}}
+{"time":"2026-10-06T15:28:24.342089262-04:00","level":"INFO","msg":"connection: ManageConnectionData: new connection created","id":"1(@)"}
+{"time":"2026-10-06T15:28:24.411417917-04:00","level":"INFO","msg":"handleInformInit: received","streamId":"hydfzd13","id":"1(@)"}
+{"time":"2026-10-06T15:28:24.782995847-04:00","level":"INFO","msg":"handleInformInit: stream started","streamId":"hydfzd13","id":"1(@)"}

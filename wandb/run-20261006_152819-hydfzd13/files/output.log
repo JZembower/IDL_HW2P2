@@ -1,0 +1,723 @@
+
+=== Epoch 1/70 ===
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.              
+Train | Cls Acc: 0.0774% | Loss: 12.2271 | LR: 0.000030 | Margin: 0.080
+Val (Cls) | Acc: 0.0116% | Loss: 12.3742
+Verification Metrics: {'ACC': 60.100000000000016, 'EER': 40.27504911591193, 'AUC': 63.37053205238497, 'TPRs': [('TPR@FPR=0.0001', 2.0366598778004072), ('TPR@FPR=0.0005', 2.0366598778004072), ('TPR@FPR=0.001', 2.0366598778004072), ('TPR@FPR=0.005', 3.2586558044806515), ('TPR@FPR=0.05', 12.627291242362526)]}
+Val (Veri) | ACC: 60.1000% | EER: 40.2750%
+Val (Combined) | Score: 29.8683%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 2/70 ===
+                                                                                                                    
+Train | Cls Acc: 4.0409% | Loss: 12.3284 | LR: 0.050030 | Margin: 0.160
+Val (Cls) | Acc: 0.0116% | Loss: 16.5164
+Verification Metrics: {'ACC': 63.5, 'EER': 36.65987780041461, 'AUC': 68.73006854220768, 'TPRs': [('TPR@FPR=0.0001', 2.8513238289205702), ('TPR@FPR=0.0005', 2.8513238289205702), ('TPR@FPR=0.001', 2.8513238289205702), ('TPR@FPR=0.005', 4.0733197556008145), ('TPR@FPR=0.05', 16.293279022403258)]}
+Val (Veri) | ACC: 63.5000% | EER: 36.6599%
+Val (Combined) | Score: 31.6758%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 3/70 ===
+Train | Cls Acc: 31.4007% | Loss: 10.1781 | LR: 0.100000 | Margin: 0.240
+Val (Cls) | Acc: 0.0277% | Loss: 22.1231
+Verification Metrics: {'ACC': 66.4, 'EER': 34.97053045186464, 'AUC': 71.24508340702387, 'TPRs': [('TPR@FPR=0.0001', 2.8513238289205702), ('TPR@FPR=0.0005', 2.8513238289205702), ('TPR@FPR=0.001', 2.8513238289205702), ('TPR@FPR=0.005', 7.942973523421588), ('TPR@FPR=0.05', 19.95926680244399)]}
+Val (Veri) | ACC: 66.4000% | EER: 34.9705%
+Val (Combined) | Score: 32.5286%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 4/70 ===
+Train | Cls Acc: 54.5243% | Loss: 9.9522 | LR: 0.099947 | Margin: 0.320
+Val (Cls) | Acc: 0.0139% | Loss: 25.4944
+Verification Metrics: {'ACC': 71.7, 'EER': 28.920570264765782, 'AUC': 78.33498053369291, 'TPRs': [('TPR@FPR=0.0001', 8.350305498981669), ('TPR@FPR=0.0005', 8.350305498981669), ('TPR@FPR=0.001', 8.350305498981669), ('TPR@FPR=0.005', 9.775967413441954), ('TPR@FPR=0.05', 29.735234215885946)]}
+Val (Veri) | ACC: 71.7000% | EER: 28.9206%
+Val (Combined) | Score: 35.5466%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 5/70 ===
+Train | Cls Acc: 63.6862% | Loss: 11.2629 | LR: 0.099787 | Margin: 0.400
+Val (Cls) | Acc: 0.0185% | Loss: 27.2723
+Verification Metrics: {'ACC': 79.2, 'EER': 20.977596741344197, 'AUC': 87.25347012432029, 'TPRs': [('TPR@FPR=0.0001', 14.460285132382891), ('TPR@FPR=0.0005', 14.460285132382891), ('TPR@FPR=0.001', 14.460285132382891), ('TPR@FPR=0.005', 22.403258655804482), ('TPR@FPR=0.05', 51.12016293279022)]}
+Val (Veri) | ACC: 79.2000% | EER: 20.9776%
+Val (Combined) | Score: 39.5204%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 6/70 ===
+Train | Cls Acc: 69.0138% | Loss: 10.5931 | LR: 0.099521 | Margin: 0.400
+Val (Cls) | Acc: 1.0765% | Loss: 22.9689
+Verification Metrics: {'ACC': 89.0, 'EER': 12.016293279027312, 'AUC': 95.63178469824223, 'TPRs': [('TPR@FPR=0.0001', 55.60081466395111), ('TPR@FPR=0.0005', 55.60081466395111), ('TPR@FPR=0.001', 55.60081466395111), ('TPR@FPR=0.005', 62.32179226069247), ('TPR@FPR=0.05', 78.61507128309573)]}
+Val (Veri) | ACC: 89.0000% | EER: 12.0163%
+Val (Combined) | Score: 44.5301%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 7/70 ===
+Train | Cls Acc: 71.9047% | Loss: 10.1908 | LR: 0.099149 | Margin: 0.400
+Val (Cls) | Acc: 24.4968% | Loss: 16.7371
+Verification Metrics: {'ACC': 94.6, 'EER': 5.702647657841139, 'AUC': 98.51952032458516, 'TPRs': [('TPR@FPR=0.0001', 78.00407331975559), ('TPR@FPR=0.0005', 78.00407331975559), ('TPR@FPR=0.001', 78.00407331975559), ('TPR@FPR=0.005', 78.00407331975559), ('TPR@FPR=0.05', 92.87169042769857)]}
+Val (Veri) | ACC: 94.6000% | EER: 5.7026%
+Val (Combined) | Score: 59.3971%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 8/70 ===
+Train | Cls Acc: 73.8052% | Loss: 9.9066 | LR: 0.098672 | Margin: 0.400
+Val (Cls) | Acc: 59.5783% | Loss: 12.3340
+Verification Metrics: {'ACC': 96.3, 'EER': 3.86965376782024, 'AUC': 99.02808509957227, 'TPRs': [('TPR@FPR=0.0001', 81.4663951120163), ('TPR@FPR=0.0005', 81.4663951120163), ('TPR@FPR=0.001', 81.4663951120163), ('TPR@FPR=0.005', 86.55804480651732), ('TPR@FPR=0.05', 96.94501018329939)]}
+Val (Veri) | ACC: 96.3000% | EER: 3.8697%
+Val (Combined) | Score: 77.8543%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 9/70 ===
+Train | Cls Acc: 75.2483% | Loss: 9.6884 | LR: 0.098091 | Margin: 0.400
+Val (Cls) | Acc: 74.6500% | Loss: 9.9501
+Verification Metrics: {'ACC': 96.7, 'EER': 3.4623217922606955, 'AUC': 99.1421220475434, 'TPRs': [('TPR@FPR=0.0001', 87.57637474541752), ('TPR@FPR=0.0005', 87.57637474541752), ('TPR@FPR=0.001', 87.57637474541752), ('TPR@FPR=0.005', 88.39103869653768), ('TPR@FPR=0.05', 97.35234215885947)]}
+Val (Veri) | ACC: 96.7000% | EER: 3.4623%
+Val (Combined) | Score: 85.5939%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 10/70 ===
+Train | Cls Acc: 76.2660% | Loss: 9.5191 | LR: 0.097408 | Margin: 0.400
+Val (Cls) | Acc: 81.1670% | Loss: 8.5514
+Verification Metrics: {'ACC': 97.1, 'EER': 3.054989816700711, 'AUC': 99.18173488210181, 'TPRs': [('TPR@FPR=0.0001', 90.020366598778), ('TPR@FPR=0.0005', 90.020366598778), ('TPR@FPR=0.001', 90.020366598778), ('TPR@FPR=0.005', 91.24236252545825), ('TPR@FPR=0.05', 97.35234215885947)]}
+Val (Veri) | ACC: 97.1000% | EER: 3.0550%
+Val (Combined) | Score: 89.0560%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 11/70 ===
+Train | Cls Acc: 77.2684% | Loss: 9.3580 | LR: 0.096624 | Margin: 0.400
+Val (Cls) | Acc: 84.5290% | Loss: 7.6464
+Verification Metrics: {'ACC': 97.5, 'EER': 3.054989816700613, 'AUC': 99.19733993813995, 'TPRs': [('TPR@FPR=0.0001', 90.83503054989816), ('TPR@FPR=0.0005', 90.83503054989816), ('TPR@FPR=0.001', 90.83503054989816), ('TPR@FPR=0.005', 94.90835030549898), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 97.5000% | EER: 3.0550%
+Val (Combined) | Score: 90.7370%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 12/70 ===
+Train | Cls Acc: 77.9504% | Loss: 9.2275 | LR: 0.095740 | Margin: 0.400
+Val (Cls) | Acc: 86.6433% | Loss: 7.0457
+Verification Metrics: {'ACC': 97.8, 'EER': 3.0549898167003118, 'AUC': 99.17413241890372, 'TPRs': [('TPR@FPR=0.0001', 90.63136456211812), ('TPR@FPR=0.0005', 90.63136456211812), ('TPR@FPR=0.001', 90.63136456211812), ('TPR@FPR=0.005', 95.11201629327903), ('TPR@FPR=0.05', 98.16700610997964)]}
+Val (Veri) | ACC: 97.8000% | EER: 3.0550%
+Val (Combined) | Score: 91.7942%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 13/70 ===
+Train | Cls Acc: 78.6056% | Loss: 9.1152 | LR: 0.094758 | Margin: 0.400
+Val (Cls) | Acc: 87.8865% | Loss: 6.5995
+Verification Metrics: {'ACC': 98.0, 'EER': 2.7504911591502625, 'AUC': 99.15212528859351, 'TPRs': [('TPR@FPR=0.0001', 91.64969450101833), ('TPR@FPR=0.0005', 91.64969450101833), ('TPR@FPR=0.001', 91.64969450101833), ('TPR@FPR=0.005', 96.33401221995926), ('TPR@FPR=0.05', 98.16700610997964)]}
+Val (Veri) | ACC: 98.0000% | EER: 2.7505%
+Val (Combined) | Score: 92.5680%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 14/70 ===
+Train | Cls Acc: 79.2018% | Loss: 9.0050 | LR: 0.093681 | Margin: 0.400
+Val (Cls) | Acc: 88.8339% | Loss: 6.2601
+Verification Metrics: {'ACC': 98.1, 'EER': 2.554027504779061, 'AUC': 99.13531984362935, 'TPRs': [('TPR@FPR=0.0001', 92.87169042769857), ('TPR@FPR=0.0005', 92.87169042769857), ('TPR@FPR=0.001', 92.87169042769857), ('TPR@FPR=0.005', 96.33401221995926), ('TPR@FPR=0.05', 98.16700610997964)]}
+Val (Veri) | ACC: 98.1000% | EER: 2.5540%
+Val (Combined) | Score: 93.1400%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 15/70 ===
+Train | Cls Acc: 79.6581% | Loss: 8.9088 | LR: 0.092511 | Margin: 0.400
+Val (Cls) | Acc: 89.5271% | Loss: 6.0055
+Verification Metrics: {'ACC': 98.1, 'EER': 2.2403258655804463, 'AUC': 99.12651699150523, 'TPRs': [('TPR@FPR=0.0001', 94.29735234215886), ('TPR@FPR=0.0005', 94.29735234215886), ('TPR@FPR=0.001', 94.29735234215886), ('TPR@FPR=0.005', 96.33401221995926), ('TPR@FPR=0.05', 98.16700610997964)]}
+Val (Veri) | ACC: 98.1000% | EER: 2.2403%
+Val (Combined) | Score: 93.6434%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 16/70 ===
+Train | Cls Acc: 80.1192% | Loss: 8.8137 | LR: 0.091250 | Margin: 0.400
+Val (Cls) | Acc: 89.9795% | Loss: 5.8017
+Verification Metrics: {'ACC': 98.1, 'EER': 2.3575638506613488, 'AUC': 99.10170895370099, 'TPRs': [('TPR@FPR=0.0001', 95.11201629327903), ('TPR@FPR=0.0005', 95.11201629327903), ('TPR@FPR=0.001', 95.11201629327903), ('TPR@FPR=0.005', 96.33401221995926), ('TPR@FPR=0.05', 98.16700610997964)]}
+Val (Veri) | ACC: 98.1000% | EER: 2.3576%
+Val (Combined) | Score: 93.8110%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 17/70 ===
+Train | Cls Acc: 80.6208% | Loss: 8.7245 | LR: 0.089901 | Margin: 0.400
+Val (Cls) | Acc: 90.3933% | Loss: 5.6253
+Verification Metrics: {'ACC': 98.2, 'EER': 2.443991853360496, 'AUC': 99.0809022123168, 'TPRs': [('TPR@FPR=0.0001', 96.13034623217924), ('TPR@FPR=0.0005', 96.13034623217924), ('TPR@FPR=0.001', 96.13034623217924), ('TPR@FPR=0.005', 96.33401221995926), ('TPR@FPR=0.05', 98.37067209775967)]}
+Val (Veri) | ACC: 98.2000% | EER: 2.4440%
+Val (Combined) | Score: 93.9746%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 18/70 ===
+Train | Cls Acc: 81.0186% | Loss: 8.6361 | LR: 0.088467 | Margin: 0.400
+Val (Cls) | Acc: 90.7952% | Loss: 5.4808
+Verification Metrics: {'ACC': 98.3, 'EER': 2.443991853360496, 'AUC': 99.06409676735262, 'TPRs': [('TPR@FPR=0.0001', 96.13034623217924), ('TPR@FPR=0.0005', 96.13034623217924), ('TPR@FPR=0.001', 96.13034623217924), ('TPR@FPR=0.005', 96.5376782077393), ('TPR@FPR=0.05', 98.37067209775967)]}
+Val (Veri) | ACC: 98.3000% | EER: 2.4440%
+Val (Combined) | Score: 94.1756%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 19/70 ===
+Train | Cls Acc: 81.3761% | Loss: 8.5581 | LR: 0.086950 | Margin: 0.400
+Val (Cls) | Acc: 91.0561% | Loss: 5.3633
+Verification Metrics: {'ACC': 98.4, 'EER': 2.4439918533447886, 'AUC': 99.06009547093258, 'TPRs': [('TPR@FPR=0.0001', 96.33401221995926), ('TPR@FPR=0.0005', 96.33401221995926), ('TPR@FPR=0.001', 96.33401221995926), ('TPR@FPR=0.005', 96.94501018329939), ('TPR@FPR=0.05', 98.16700610997964)]}
+Val (Veri) | ACC: 98.4000% | EER: 2.4440%
+Val (Combined) | Score: 94.3060%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 20/70 ===
+Train | Cls Acc: 81.7343% | Loss: 8.4807 | LR: 0.085355 | Margin: 0.400
+Val (Cls) | Acc: 91.2780% | Loss: 5.2546
+Verification Metrics: {'ACC': 98.5, 'EER': 2.4439918533447886, 'AUC': 99.05809482272255, 'TPRs': [('TPR@FPR=0.0001', 96.33401221995926), ('TPR@FPR=0.0005', 96.33401221995926), ('TPR@FPR=0.001', 96.33401221995926), ('TPR@FPR=0.005', 97.35234215885947), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.5000% | EER: 2.4440%
+Val (Combined) | Score: 94.4170%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 21/70 ===
+Train | Cls Acc: 82.0558% | Loss: 8.4002 | LR: 0.083685 | Margin: 0.400
+Val (Cls) | Acc: 91.4906% | Loss: 5.1579
+Verification Metrics: {'ACC': 98.5, 'EER': 2.4439918533640097, 'AUC': 99.0632965080686, 'TPRs': [('TPR@FPR=0.0001', 96.5376782077393), ('TPR@FPR=0.0005', 96.5376782077393), ('TPR@FPR=0.001', 96.5376782077393), ('TPR@FPR=0.005', 97.35234215885947), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.5000% | EER: 2.4440%
+Val (Combined) | Score: 94.5233%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 22/70 ===
+Train | Cls Acc: 82.4321% | Loss: 8.3202 | LR: 0.081942 | Margin: 0.400
+Val (Cls) | Acc: 91.6108% | Loss: 5.0815
+Verification Metrics: {'ACC': 98.5, 'EER': 2.4439918533640097, 'AUC': 99.07610065661274, 'TPRs': [('TPR@FPR=0.0001', 96.5376782077393), ('TPR@FPR=0.0005', 96.5376782077393), ('TPR@FPR=0.001', 96.5376782077393), ('TPR@FPR=0.005', 97.35234215885947), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.5000% | EER: 2.4440%
+Val (Combined) | Score: 94.5834%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 23/70 ===
+Train | Cls Acc: 82.7309% | Loss: 8.2419 | LR: 0.080132 | Margin: 0.400
+Val (Cls) | Acc: 91.7795% | Loss: 5.0068
+Verification Metrics: {'ACC': 98.7, 'EER': 2.3575638506310224, 'AUC': 99.09410649050292, 'TPRs': [('TPR@FPR=0.0001', 96.5376782077393), ('TPR@FPR=0.0005', 96.5376782077393), ('TPR@FPR=0.001', 96.5376782077393), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.3576%
+Val (Combined) | Score: 94.7110%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 24/70 ===
+Train | Cls Acc: 83.0334% | Loss: 8.1618 | LR: 0.078257 | Margin: 0.400
+Val (Cls) | Acc: 91.9093% | Loss: 4.9389
+Verification Metrics: {'ACC': 98.7, 'EER': 2.24032586558046, 'AUC': 99.102109083343, 'TPRs': [('TPR@FPR=0.0001', 97.14867617107943), ('TPR@FPR=0.0005', 97.14867617107943), ('TPR@FPR=0.001', 97.14867617107943), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 94.8345%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 25/70 ===
+Train | Cls Acc: 83.3357% | Loss: 8.0775 | LR: 0.076322 | Margin: 0.400
+Val (Cls) | Acc: 92.0502% | Loss: 4.8813
+Verification Metrics: {'ACC': 98.8, 'EER': 2.2403258655804867, 'AUC': 99.11651375045516, 'TPRs': [('TPR@FPR=0.0001', 97.5560081466395), ('TPR@FPR=0.0005', 97.5560081466395), ('TPR@FPR=0.001', 97.5560081466395), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.8000% | EER: 2.2403%
+Val (Combined) | Score: 94.9050%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 26/70 ===
+Train | Cls Acc: 83.5784% | Loss: 7.9979 | LR: 0.074330 | Margin: 0.400
+Val (Cls) | Acc: 92.1075% | Loss: 4.8169
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655770446, 'AUC': 99.11091193546709, 'TPRs': [('TPR@FPR=0.0001', 97.35234215885947), ('TPR@FPR=0.0005', 97.35234215885947), ('TPR@FPR=0.001', 97.35234215885947), ('TPR@FPR=0.005', 97.35234215885947), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 94.9336%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 27/70 ===
+Train | Cls Acc: 83.9976% | Loss: 7.9091 | LR: 0.072287 | Margin: 0.400
+Val (Cls) | Acc: 92.2141% | Loss: 4.7562
+Verification Metrics: {'ACC': 98.6, 'EER': 2.24032586558046, 'AUC': 99.09450662014493, 'TPRs': [('TPR@FPR=0.0001', 97.14867617107943), ('TPR@FPR=0.0005', 97.14867617107943), ('TPR@FPR=0.001', 97.14867617107943), ('TPR@FPR=0.005', 97.35234215885947), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.6000% | EER: 2.2403%
+Val (Combined) | Score: 94.9869%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 28/70 ===
+Train | Cls Acc: 84.2466% | Loss: 7.8227 | LR: 0.070196 | Margin: 0.400
+Val (Cls) | Acc: 92.3712% | Loss: 4.6926
+Verification Metrics: {'ACC': 98.6, 'EER': 2.2403258655810108, 'AUC': 99.07970182339079, 'TPRs': [('TPR@FPR=0.0001', 96.94501018329939), ('TPR@FPR=0.0005', 96.94501018329939), ('TPR@FPR=0.001', 96.94501018329939), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.6000% | EER: 2.2403%
+Val (Combined) | Score: 95.0655%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 29/70 ===
+Train | Cls Acc: 84.6219% | Loss: 7.7376 | LR: 0.068062 | Margin: 0.400
+Val (Cls) | Acc: 92.4495% | Loss: 4.6324
+Verification Metrics: {'ACC': 98.6, 'EER': 2.240325865591173, 'AUC': 99.07530039732873, 'TPRs': [('TPR@FPR=0.0001', 96.74134419551935), ('TPR@FPR=0.0005', 96.74134419551935), ('TPR@FPR=0.001', 96.74134419551935), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.6000% | EER: 2.2403%
+Val (Combined) | Score: 95.1046%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 30/70 ===
+Train | Cls Acc: 84.8182% | Loss: 7.6393 | LR: 0.065890 | Margin: 0.400
+Val (Cls) | Acc: 92.5697% | Loss: 4.5684
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655810108, 'AUC': 99.0628963784266, 'TPRs': [('TPR@FPR=0.0001', 96.94501018329939), ('TPR@FPR=0.0005', 96.94501018329939), ('TPR@FPR=0.001', 96.94501018329939), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.1647%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 31/70 ===
+Train | Cls Acc: 85.2508% | Loss: 7.5419 | LR: 0.063683 | Margin: 0.400
+Val (Cls) | Acc: 92.6483% | Loss: 4.5018
+Verification Metrics: {'ACC': 98.6, 'EER': 2.24032586558046, 'AUC': 99.04609093346244, 'TPRs': [('TPR@FPR=0.0001', 97.14867617107943), ('TPR@FPR=0.0005', 97.14867617107943), ('TPR@FPR=0.001', 97.14867617107943), ('TPR@FPR=0.005', 97.35234215885947), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.6000% | EER: 2.2403%
+Val (Combined) | Score: 95.2040%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 32/70 ===
+Train | Cls Acc: 85.4630% | Loss: 7.4566 | LR: 0.061448 | Margin: 0.400
+Val (Cls) | Acc: 92.7526% | Loss: 4.4365
+Verification Metrics: {'ACC': 98.6, 'EER': 2.2403258655810108, 'AUC': 99.03768821098036, 'TPRs': [('TPR@FPR=0.0001', 96.94501018329939), ('TPR@FPR=0.0005', 96.94501018329939), ('TPR@FPR=0.001', 96.94501018329939), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.6000% | EER: 2.2403%
+Val (Combined) | Score: 95.2561%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 33/70 ===
+Train | Cls Acc: 85.7302% | Loss: 7.3567 | LR: 0.059187 | Margin: 0.400
+Val (Cls) | Acc: 92.8240% | Loss: 4.3721
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655810108, 'AUC': 99.03128613670829, 'TPRs': [('TPR@FPR=0.0001', 96.94501018329939), ('TPR@FPR=0.0005', 96.94501018329939), ('TPR@FPR=0.001', 96.94501018329939), ('TPR@FPR=0.005', 97.75967413441956), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.2918%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 34/70 ===
+Train | Cls Acc: 86.0455% | Loss: 7.2559 | LR: 0.056908 | Margin: 0.400
+Val (Cls) | Acc: 92.9095% | Loss: 4.3031
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655770446, 'AUC': 99.03448717384433, 'TPRs': [('TPR@FPR=0.0001', 97.35234215885947), ('TPR@FPR=0.0005', 97.35234215885947), ('TPR@FPR=0.001', 97.35234215885947), ('TPR@FPR=0.005', 97.75967413441956), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.3346%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 35/70 ===
+Train | Cls Acc: 86.3483% | Loss: 7.1489 | LR: 0.054613 | Margin: 0.400
+Val (Cls) | Acc: 93.0020% | Loss: 4.2336
+Verification Metrics: {'ACC': 98.8, 'EER': 2.2403258655770446, 'AUC': 99.02968561814028, 'TPRs': [('TPR@FPR=0.0001', 97.35234215885947), ('TPR@FPR=0.0005', 97.35234215885947), ('TPR@FPR=0.001', 97.35234215885947), ('TPR@FPR=0.005', 97.75967413441956), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.8000% | EER: 2.2403%
+Val (Combined) | Score: 95.3808%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 36/70 ===
+Train | Cls Acc: 86.6195% | Loss: 7.0392 | LR: 0.052309 | Margin: 0.400
+Val (Cls) | Acc: 93.0898% | Loss: 4.1628
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655770446, 'AUC': 99.02888535885627, 'TPRs': [('TPR@FPR=0.0001', 97.35234215885947), ('TPR@FPR=0.0005', 97.35234215885947), ('TPR@FPR=0.001', 97.35234215885947), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.4247%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 37/70 ===
+Train | Cls Acc: 86.8850% | Loss: 6.9268 | LR: 0.050000 | Margin: 0.400
+Val (Cls) | Acc: 93.1291% | Loss: 4.0938
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655770446, 'AUC': 99.04569080382043, 'TPRs': [('TPR@FPR=0.0001', 97.35234215885947), ('TPR@FPR=0.0005', 97.35234215885947), ('TPR@FPR=0.001', 97.35234215885947), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.4444%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 38/70 ===
+Train | Cls Acc: 87.2051% | Loss: 6.8168 | LR: 0.047691 | Margin: 0.400
+Val (Cls) | Acc: 93.1915% | Loss: 4.0242
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655770446, 'AUC': 99.03688795169634, 'TPRs': [('TPR@FPR=0.0001', 97.35234215885947), ('TPR@FPR=0.0005', 97.35234215885947), ('TPR@FPR=0.001', 97.35234215885947), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.4756%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 39/70 ===
+Train | Cls Acc: 87.4223% | Loss: 6.6962 | LR: 0.045387 | Margin: 0.400
+Val (Cls) | Acc: 93.2701% | Loss: 3.9549
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655770446, 'AUC': 99.0416895074004, 'TPRs': [('TPR@FPR=0.0001', 97.35234215885947), ('TPR@FPR=0.0005', 97.35234215885947), ('TPR@FPR=0.001', 97.35234215885947), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.5149%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 40/70 ===
+Train | Cls Acc: 87.7258% | Loss: 6.5748 | LR: 0.043092 | Margin: 0.400
+Val (Cls) | Acc: 93.3348% | Loss: 3.8786
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655770446, 'AUC': 99.03568756277032, 'TPRs': [('TPR@FPR=0.0001', 97.35234215885947), ('TPR@FPR=0.0005', 97.35234215885947), ('TPR@FPR=0.001', 97.35234215885947), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.5472%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 41/70 ===
+Train | Cls Acc: 87.9458% | Loss: 6.4543 | LR: 0.040813 | Margin: 0.400
+Val (Cls) | Acc: 93.4088% | Loss: 3.8003
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655770446, 'AUC': 99.03088600706629, 'TPRs': [('TPR@FPR=0.0001', 97.35234215885947), ('TPR@FPR=0.0005', 97.35234215885947), ('TPR@FPR=0.001', 97.35234215885947), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.5842%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 42/70 ===
+Train | Cls Acc: 88.2597% | Loss: 6.3193 | LR: 0.038552 | Margin: 0.400
+Val (Cls) | Acc: 93.4804% | Loss: 3.7186
+Verification Metrics: {'ACC': 98.7, 'EER': 2.2403258655770446, 'AUC': 99.01007926568208, 'TPRs': [('TPR@FPR=0.0001', 97.35234215885947), ('TPR@FPR=0.0005', 97.35234215885947), ('TPR@FPR=0.001', 97.35234215885947), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.6200%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 43/70 ===
+Train | Cls Acc: 88.5161% | Loss: 6.1878 | LR: 0.036317 | Margin: 0.400
+Val (Cls) | Acc: 93.5498% | Loss: 3.6358
+Verification Metrics: {'ACC': 98.6, 'EER': 2.2403258655810108, 'AUC': 99.0124800435341, 'TPRs': [('TPR@FPR=0.0001', 96.94501018329939), ('TPR@FPR=0.0005', 96.94501018329939), ('TPR@FPR=0.001', 96.94501018329939), ('TPR@FPR=0.005', 97.35234215885947), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.6000% | EER: 2.2403%
+Val (Combined) | Score: 95.6547%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 44/70 ===
+Train | Cls Acc: 88.8411% | Loss: 6.0381 | LR: 0.034110 | Margin: 0.400
+Val (Cls) | Acc: 93.5844% | Loss: 3.5517
+Verification Metrics: {'ACC': 98.6, 'EER': 2.24032586558046, 'AUC': 99.0312861367083, 'TPRs': [('TPR@FPR=0.0001', 97.14867617107943), ('TPR@FPR=0.0005', 97.14867617107943), ('TPR@FPR=0.001', 97.14867617107943), ('TPR@FPR=0.005', 97.35234215885947), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.6000% | EER: 2.2403%
+Val (Combined) | Score: 95.6721%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 45/70 ===
+Train | Cls Acc: 89.1429% | Loss: 5.9004 | LR: 0.031938 | Margin: 0.400
+Val (Cls) | Acc: 93.6168% | Loss: 3.4684
+Verification Metrics: {'ACC': 98.7, 'EER': 2.24032586558046, 'AUC': 99.04769145203046, 'TPRs': [('TPR@FPR=0.0001', 97.14867617107943), ('TPR@FPR=0.0005', 97.14867617107943), ('TPR@FPR=0.001', 97.14867617107943), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.75967413441956)]}
+Val (Veri) | ACC: 98.7000% | EER: 2.2403%
+Val (Combined) | Score: 95.6882%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 46/70 ===
+Train | Cls Acc: 89.4221% | Loss: 5.7463 | LR: 0.029804 | Margin: 0.400
+Val (Cls) | Acc: 93.6766% | Loss: 3.3879
+Verification Metrics: {'ACC': 98.8, 'EER': 2.2403258655804867, 'AUC': 99.09450662014493, 'TPRs': [('TPR@FPR=0.0001', 97.5560081466395), ('TPR@FPR=0.0005', 97.5560081466395), ('TPR@FPR=0.001', 97.5560081466395), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.8000% | EER: 2.2403%
+Val (Combined) | Score: 95.7181%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 47/70 ===
+Train | Cls Acc: 89.6613% | Loss: 5.5998 | LR: 0.027713 | Margin: 0.400
+Val (Cls) | Acc: 93.7113% | Loss: 3.3084
+Verification Metrics: {'ACC': 98.8, 'EER': 2.2403258655804867, 'AUC': 99.11491323188714, 'TPRs': [('TPR@FPR=0.0001', 97.5560081466395), ('TPR@FPR=0.0005', 97.5560081466395), ('TPR@FPR=0.001', 97.5560081466395), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.8000% | EER: 2.2403%
+Val (Combined) | Score: 95.7355%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 48/70 ===
+Train | Cls Acc: 90.0039% | Loss: 5.4403 | LR: 0.025670 | Margin: 0.400
+Val (Cls) | Acc: 93.7829% | Loss: 3.2256
+Verification Metrics: {'ACC': 98.8, 'EER': 2.161100196384538, 'AUC': 99.12971802864128, 'TPRs': [('TPR@FPR=0.0001', 97.5560081466395), ('TPR@FPR=0.0005', 97.5560081466395), ('TPR@FPR=0.001', 97.5560081466395), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.8000% | EER: 2.1611%
+Val (Combined) | Score: 95.8109%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 49/70 ===
+Train | Cls Acc: 90.3285% | Loss: 5.2801 | LR: 0.023678 | Margin: 0.400
+Val (Cls) | Acc: 93.8410% | Loss: 3.1469
+Verification Metrics: {'ACC': 98.8, 'EER': 2.0366598778004024, 'AUC': 99.15172515895149, 'TPRs': [('TPR@FPR=0.0001', 97.5560081466395), ('TPR@FPR=0.0005', 97.5560081466395), ('TPR@FPR=0.001', 97.5560081466395), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.8000% | EER: 2.0367%
+Val (Combined) | Score: 95.9022%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Saved best combined model: ./checkpoints/run3_seresnet34_ema/best_combined.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 50/70 ===
+Train | Cls Acc: 90.6292% | Loss: 5.1084 | LR: 0.021743 | Margin: 0.400
+Val (Cls) | Acc: 93.8526% | Loss: 3.0693
+Verification Metrics: {'ACC': 98.8, 'EER': 2.2403258655804867, 'AUC': 99.15612658501355, 'TPRs': [('TPR@FPR=0.0001', 97.5560081466395), ('TPR@FPR=0.0005', 97.5560081466395), ('TPR@FPR=0.001', 97.5560081466395), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.8000% | EER: 2.2403%
+Val (Combined) | Score: 95.8061%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 51/70 ===
+Train | Cls Acc: 90.9190% | Loss: 4.9372 | LR: 0.019868 | Margin: 0.400
+Val (Cls) | Acc: 93.9031% | Loss: 2.9914
+Verification Metrics: {'ACC': 98.8, 'EER': 2.2403258655801204, 'AUC': 99.17013112248368, 'TPRs': [('TPR@FPR=0.0001', 97.5560081466395), ('TPR@FPR=0.0005', 97.5560081466395), ('TPR@FPR=0.001', 97.5560081466395), ('TPR@FPR=0.005', 97.5560081466395), ('TPR@FPR=0.05', 97.9633401221996)]}
+Val (Veri) | ACC: 98.8000% | EER: 2.2403%
+Val (Combined) | Score: 95.8314%
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Saved best classification model: ./checkpoints/run3_seresnet34_ema/best_cls.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Saved best retrieval model: ./checkpoints/run3_seresnet34_ema/best_ret.pth
+Checkpoint saved at ./checkpoints/run3_seresnet34_ema/last.pth
+Saved last epoch model: ./checkpoints/run3_seresnet34_ema/last.pth
+
+=== Epoch 52/70 ===

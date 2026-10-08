@@ -1,0 +1,314 @@
+Mon Oct  5 18:49:11 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-SXM2-32GB           On  |   00000000:B3:00.0 Off |                    0 |
+| N/A   31C    P0             40W /  300W |       0MiB /  32768MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+LOCAL=/local
+Data: ['cls_data', 'test_pairs.txt', 'val_pairs.txt', 'ver_data']
+Device:  cuda
+/ocean/projects/cis250019p/mzhang23/TA/envs/IDLF26/lib/python3.11/site-packages/torchvision/transforms/v2/_deprecated.py:42: UserWarning: The transform `ToTensor()` is deprecated and will be removed in a future release. Instead, please use `v2.Compose([v2.ToImage(), v2.ToDtype(torch.float32, scale=True)])`.Output is equivalent up to float precision.
+  warnings.warn(
+Loading labeled dataset:   0%|          | 0/431550 [00:00<?, ?it/s]Loading labeled dataset: 100%|██████████| 431550/431550 [00:00<00:00, 884708.61it/s]
+Loading labeled dataset:   0%|          | 0/43097 [00:00<?, ?it/s]Loading labeled dataset: 100%|██████████| 43097/43097 [00:00<00:00, 922334.69it/s]
+Loading unlabeled dataset:   0%|          | 0/43097 [00:00<?, ?it/s]Loading unlabeled dataset: 100%|██████████| 43097/43097 [00:00<00:00, 1367481.58it/s]
+Loading dataset:   0%|          | 0/1000 [00:00<?, ?it/s]Loading dataset: 100%|██████████| 1000/1000 [00:00<00:00, 587437.54it/s]
+Loading dataset:   0%|          | 0/5000 [00:00<?, ?it/s]Loading dataset: 100%|██████████| 5000/5000 [00:00<00:00, 699703.72it/s]
+Total params: 26,124,652
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 64, 112, 112]            1728
+       BatchNorm2d-2         [-1, 64, 112, 112]             128
+              ReLU-3         [-1, 64, 112, 112]               0
+            Conv2d-4           [-1, 64, 56, 56]           36864
+       BatchNorm2d-5           [-1, 64, 56, 56]             128
+              ReLU-6           [-1, 64, 56, 56]               0
+            Conv2d-7           [-1, 64, 56, 56]           36864
+       BatchNorm2d-8           [-1, 64, 56, 56]             128
+ AdaptiveAvgPool2d-9             [-1, 64, 1, 1]               0
+           Conv2d-10              [-1, 4, 1, 1]             260
+             ReLU-11              [-1, 4, 1, 1]               0
+           Conv2d-12             [-1, 64, 1, 1]             320
+          Sigmoid-13             [-1, 64, 1, 1]               0
+         SEModule-14           [-1, 64, 56, 56]               0
+           Conv2d-15           [-1, 64, 56, 56]            4096
+      BatchNorm2d-16           [-1, 64, 56, 56]             128
+             ReLU-17           [-1, 64, 56, 56]               0
+       BasicBlock-18           [-1, 64, 56, 56]               0
+           Conv2d-19           [-1, 64, 56, 56]           36864
+      BatchNorm2d-20           [-1, 64, 56, 56]             128
+             ReLU-21           [-1, 64, 56, 56]               0
+           Conv2d-22           [-1, 64, 56, 56]           36864
+      BatchNorm2d-23           [-1, 64, 56, 56]             128
+AdaptiveAvgPool2d-24             [-1, 64, 1, 1]               0
+           Conv2d-25              [-1, 4, 1, 1]             260
+             ReLU-26              [-1, 4, 1, 1]               0
+           Conv2d-27             [-1, 64, 1, 1]             320
+          Sigmoid-28             [-1, 64, 1, 1]               0
+         SEModule-29           [-1, 64, 56, 56]               0
+         Identity-30           [-1, 64, 56, 56]               0
+             ReLU-31           [-1, 64, 56, 56]               0
+       BasicBlock-32           [-1, 64, 56, 56]               0
+           Conv2d-33           [-1, 64, 56, 56]           36864
+      BatchNorm2d-34           [-1, 64, 56, 56]             128
+             ReLU-35           [-1, 64, 56, 56]               0
+           Conv2d-36           [-1, 64, 56, 56]           36864
+      BatchNorm2d-37           [-1, 64, 56, 56]             128
+AdaptiveAvgPool2d-38             [-1, 64, 1, 1]               0
+           Conv2d-39              [-1, 4, 1, 1]             260
+             ReLU-40              [-1, 4, 1, 1]               0
+           Conv2d-41             [-1, 64, 1, 1]             320
+          Sigmoid-42             [-1, 64, 1, 1]               0
+         SEModule-43           [-1, 64, 56, 56]               0
+         Identity-44           [-1, 64, 56, 56]               0
+             ReLU-45           [-1, 64, 56, 56]               0
+       BasicBlock-46           [-1, 64, 56, 56]               0
+           Conv2d-47          [-1, 128, 28, 28]           73728
+      BatchNorm2d-48          [-1, 128, 28, 28]             256
+             ReLU-49          [-1, 128, 28, 28]               0
+           Conv2d-50          [-1, 128, 28, 28]          147456
+      BatchNorm2d-51          [-1, 128, 28, 28]             256
+AdaptiveAvgPool2d-52            [-1, 128, 1, 1]               0
+           Conv2d-53              [-1, 8, 1, 1]            1032
+             ReLU-54              [-1, 8, 1, 1]               0
+           Conv2d-55            [-1, 128, 1, 1]            1152
+          Sigmoid-56            [-1, 128, 1, 1]               0
+         SEModule-57          [-1, 128, 28, 28]               0
+           Conv2d-58          [-1, 128, 28, 28]            8192
+      BatchNorm2d-59          [-1, 128, 28, 28]             256
+             ReLU-60          [-1, 128, 28, 28]               0
+       BasicBlock-61          [-1, 128, 28, 28]               0
+           Conv2d-62          [-1, 128, 28, 28]          147456
+      BatchNorm2d-63          [-1, 128, 28, 28]             256
+             ReLU-64          [-1, 128, 28, 28]               0
+           Conv2d-65          [-1, 128, 28, 28]          147456
+      BatchNorm2d-66          [-1, 128, 28, 28]             256
+AdaptiveAvgPool2d-67            [-1, 128, 1, 1]               0
+           Conv2d-68              [-1, 8, 1, 1]            1032
+             ReLU-69              [-1, 8, 1, 1]               0
+           Conv2d-70            [-1, 128, 1, 1]            1152
+          Sigmoid-71            [-1, 128, 1, 1]               0
+         SEModule-72          [-1, 128, 28, 28]               0
+         Identity-73          [-1, 128, 28, 28]               0
+             ReLU-74          [-1, 128, 28, 28]               0
+       BasicBlock-75          [-1, 128, 28, 28]               0
+           Conv2d-76          [-1, 128, 28, 28]          147456
+      BatchNorm2d-77          [-1, 128, 28, 28]             256
+             ReLU-78          [-1, 128, 28, 28]               0
+           Conv2d-79          [-1, 128, 28, 28]          147456
+      BatchNorm2d-80          [-1, 128, 28, 28]             256
+AdaptiveAvgPool2d-81            [-1, 128, 1, 1]               0
+           Conv2d-82              [-1, 8, 1, 1]            1032
+             ReLU-83              [-1, 8, 1, 1]               0
+           Conv2d-84            [-1, 128, 1, 1]            1152
+          Sigmoid-85            [-1, 128, 1, 1]               0
+         SEModule-86          [-1, 128, 28, 28]               0
+         Identity-87          [-1, 128, 28, 28]               0
+             ReLU-88          [-1, 128, 28, 28]               0
+       BasicBlock-89          [-1, 128, 28, 28]               0
+           Conv2d-90          [-1, 128, 28, 28]          147456
+      BatchNorm2d-91          [-1, 128, 28, 28]             256
+             ReLU-92          [-1, 128, 28, 28]               0
+           Conv2d-93          [-1, 128, 28, 28]          147456
+      BatchNorm2d-94          [-1, 128, 28, 28]             256
+AdaptiveAvgPool2d-95            [-1, 128, 1, 1]               0
+           Conv2d-96              [-1, 8, 1, 1]            1032
+             ReLU-97              [-1, 8, 1, 1]               0
+           Conv2d-98            [-1, 128, 1, 1]            1152
+          Sigmoid-99            [-1, 128, 1, 1]               0
+        SEModule-100          [-1, 128, 28, 28]               0
+        Identity-101          [-1, 128, 28, 28]               0
+            ReLU-102          [-1, 128, 28, 28]               0
+      BasicBlock-103          [-1, 128, 28, 28]               0
+          Conv2d-104          [-1, 256, 14, 14]          294912
+     BatchNorm2d-105          [-1, 256, 14, 14]             512
+            ReLU-106          [-1, 256, 14, 14]               0
+          Conv2d-107          [-1, 256, 14, 14]          589824
+     BatchNorm2d-108          [-1, 256, 14, 14]             512
+AdaptiveAvgPool2d-109            [-1, 256, 1, 1]               0
+          Conv2d-110             [-1, 16, 1, 1]            4112
+            ReLU-111             [-1, 16, 1, 1]               0
+          Conv2d-112            [-1, 256, 1, 1]            4352
+         Sigmoid-113            [-1, 256, 1, 1]               0
+        SEModule-114          [-1, 256, 14, 14]               0
+          Conv2d-115          [-1, 256, 14, 14]           32768
+     BatchNorm2d-116          [-1, 256, 14, 14]             512
+            ReLU-117          [-1, 256, 14, 14]               0
+      BasicBlock-118          [-1, 256, 14, 14]               0
+          Conv2d-119          [-1, 256, 14, 14]          589824
+     BatchNorm2d-120          [-1, 256, 14, 14]             512
+            ReLU-121          [-1, 256, 14, 14]               0
+          Conv2d-122          [-1, 256, 14, 14]          589824
+     BatchNorm2d-123          [-1, 256, 14, 14]             512
+AdaptiveAvgPool2d-124            [-1, 256, 1, 1]               0
+          Conv2d-125             [-1, 16, 1, 1]            4112
+            ReLU-126             [-1, 16, 1, 1]               0
+          Conv2d-127            [-1, 256, 1, 1]            4352
+         Sigmoid-128            [-1, 256, 1, 1]               0
+        SEModule-129          [-1, 256, 14, 14]               0
+        Identity-130          [-1, 256, 14, 14]               0
+            ReLU-131          [-1, 256, 14, 14]               0
+      BasicBlock-132          [-1, 256, 14, 14]               0
+          Conv2d-133          [-1, 256, 14, 14]          589824
+     BatchNorm2d-134          [-1, 256, 14, 14]             512
+            ReLU-135          [-1, 256, 14, 14]               0
+          Conv2d-136          [-1, 256, 14, 14]          589824
+     BatchNorm2d-137          [-1, 256, 14, 14]             512
+AdaptiveAvgPool2d-138            [-1, 256, 1, 1]               0
+          Conv2d-139             [-1, 16, 1, 1]            4112
+            ReLU-140             [-1, 16, 1, 1]               0
+          Conv2d-141            [-1, 256, 1, 1]            4352
+         Sigmoid-142            [-1, 256, 1, 1]               0
+        SEModule-143          [-1, 256, 14, 14]               0
+        Identity-144          [-1, 256, 14, 14]               0
+            ReLU-145          [-1, 256, 14, 14]               0
+      BasicBlock-146          [-1, 256, 14, 14]               0
+          Conv2d-147          [-1, 256, 14, 14]          589824
+     BatchNorm2d-148          [-1, 256, 14, 14]             512
+            ReLU-149          [-1, 256, 14, 14]               0
+          Conv2d-150          [-1, 256, 14, 14]          589824
+     BatchNorm2d-151          [-1, 256, 14, 14]             512
+AdaptiveAvgPool2d-152            [-1, 256, 1, 1]               0
+          Conv2d-153             [-1, 16, 1, 1]            4112
+            ReLU-154             [-1, 16, 1, 1]               0
+          Conv2d-155            [-1, 256, 1, 1]            4352
+         Sigmoid-156            [-1, 256, 1, 1]               0
+        SEModule-157          [-1, 256, 14, 14]               0
+        Identity-158          [-1, 256, 14, 14]               0
+            ReLU-159          [-1, 256, 14, 14]               0
+      BasicBlock-160          [-1, 256, 14, 14]               0
+          Conv2d-161          [-1, 256, 14, 14]          589824
+     BatchNorm2d-162          [-1, 256, 14, 14]             512
+            ReLU-163          [-1, 256, 14, 14]               0
+          Conv2d-164          [-1, 256, 14, 14]          589824
+     BatchNorm2d-165          [-1, 256, 14, 14]             512
+AdaptiveAvgPool2d-166            [-1, 256, 1, 1]               0
+          Conv2d-167             [-1, 16, 1, 1]            4112
+            ReLU-168             [-1, 16, 1, 1]               0
+          Conv2d-169            [-1, 256, 1, 1]            4352
+         Sigmoid-170            [-1, 256, 1, 1]               0
+        SEModule-171          [-1, 256, 14, 14]               0
+        Identity-172          [-1, 256, 14, 14]               0
+            ReLU-173          [-1, 256, 14, 14]               0
+      BasicBlock-174          [-1, 256, 14, 14]               0
+          Conv2d-175          [-1, 256, 14, 14]          589824
+     BatchNorm2d-176          [-1, 256, 14, 14]             512
+            ReLU-177          [-1, 256, 14, 14]               0
+          Conv2d-178          [-1, 256, 14, 14]          589824
+     BatchNorm2d-179          [-1, 256, 14, 14]             512
+AdaptiveAvgPool2d-180            [-1, 256, 1, 1]               0
+          Conv2d-181             [-1, 16, 1, 1]            4112
+            ReLU-182             [-1, 16, 1, 1]               0
+          Conv2d-183            [-1, 256, 1, 1]            4352
+         Sigmoid-184            [-1, 256, 1, 1]               0
+        SEModule-185          [-1, 256, 14, 14]               0
+        Identity-186          [-1, 256, 14, 14]               0
+            ReLU-187          [-1, 256, 14, 14]               0
+      BasicBlock-188          [-1, 256, 14, 14]               0
+          Conv2d-189            [-1, 512, 7, 7]         1179648
+     BatchNorm2d-190            [-1, 512, 7, 7]            1024
+            ReLU-191            [-1, 512, 7, 7]               0
+          Conv2d-192            [-1, 512, 7, 7]         2359296
+     BatchNorm2d-193            [-1, 512, 7, 7]            1024
+AdaptiveAvgPool2d-194            [-1, 512, 1, 1]               0
+          Conv2d-195             [-1, 32, 1, 1]           16416
+            ReLU-196             [-1, 32, 1, 1]               0
+          Conv2d-197            [-1, 512, 1, 1]           16896
+         Sigmoid-198            [-1, 512, 1, 1]               0
+        SEModule-199            [-1, 512, 7, 7]               0
+          Conv2d-200            [-1, 512, 7, 7]          131072
+     BatchNorm2d-201            [-1, 512, 7, 7]            1024
+            ReLU-202            [-1, 512, 7, 7]               0
+      BasicBlock-203            [-1, 512, 7, 7]               0
+          Conv2d-204            [-1, 512, 7, 7]         2359296
+     BatchNorm2d-205            [-1, 512, 7, 7]            1024
+            ReLU-206            [-1, 512, 7, 7]               0
+          Conv2d-207            [-1, 512, 7, 7]         2359296
+     BatchNorm2d-208            [-1, 512, 7, 7]            1024
+AdaptiveAvgPool2d-209            [-1, 512, 1, 1]               0
+          Conv2d-210             [-1, 32, 1, 1]           16416
+            ReLU-211             [-1, 32, 1, 1]               0
+          Conv2d-212            [-1, 512, 1, 1]           16896
+         Sigmoid-213            [-1, 512, 1, 1]               0
+        SEModule-214            [-1, 512, 7, 7]               0
+        Identity-215            [-1, 512, 7, 7]               0
+            ReLU-216            [-1, 512, 7, 7]               0
+      BasicBlock-217            [-1, 512, 7, 7]               0
+          Conv2d-218            [-1, 512, 7, 7]         2359296
+     BatchNorm2d-219            [-1, 512, 7, 7]            1024
+            ReLU-220            [-1, 512, 7, 7]               0
+          Conv2d-221            [-1, 512, 7, 7]         2359296
+     BatchNorm2d-222            [-1, 512, 7, 7]            1024
+AdaptiveAvgPool2d-223            [-1, 512, 1, 1]               0
+          Conv2d-224             [-1, 32, 1, 1]           16416
+            ReLU-225             [-1, 32, 1, 1]               0
+          Conv2d-226            [-1, 512, 1, 1]           16896
+         Sigmoid-227            [-1, 512, 1, 1]               0
+        SEModule-228            [-1, 512, 7, 7]               0
+        Identity-229            [-1, 512, 7, 7]               0
+            ReLU-230            [-1, 512, 7, 7]               0
+      BasicBlock-231            [-1, 512, 7, 7]               0
+AdaptiveAvgPool2d-232            [-1, 512, 1, 1]               0
+         Flatten-233                  [-1, 512]               0
+         Dropout-234                  [-1, 512]               0
+          Linear-235                  [-1, 512]          262144
+     BatchNorm1d-236                  [-1, 512]            1024
+      NormLinear-237                 [-1, 8631]         4419072
+================================================================
+Total params: tensor(26124652)
+Trainable params: tensor(26124652)
+Non-trainable params: tensor(0)
+----------------------------------------------------------------
+
+=== Epoch 1/1 ===
+Train:   0%|          | 0/8 [00:00<?, ?it/s]Train:   0%|          | 0/8 [00:16<?, ?it/s, acc=0.00% (0.00%), loss=22.4653 (22.4653), lr=0.025000]Train:   0%|          | 0/8 [00:16<?, ?it/s, acc=0.00% (0.00%), loss=22.5986 (22.5319), lr=0.037500]Train:   0%|          | 0/8 [00:16<?, ?it/s, acc=0.00% (0.00%), loss=22.5061 (22.5233), lr=0.050000]Train:   0%|          | 0/8 [00:16<?, ?it/s, acc=0.00% (0.00%), loss=22.4417 (22.5029), lr=0.062500]Train:   0%|          | 0/8 [00:16<?, ?it/s, acc=0.00% (0.00%), loss=22.4305 (22.4884), lr=0.075000]Train:   0%|          | 0/8 [00:17<?, ?it/s, acc=0.00% (0.00%), loss=22.4679 (22.4850), lr=0.087500]Train:   0%|          | 0/8 [00:17<?, ?it/s, acc=0.00% (0.00%), loss=22.4911 (22.4859), lr=0.100000]Train:   0%|          | 0/8 [00:17<?, ?it/s, acc=0.00% (0.00%), loss=22.5462 (22.4934), lr=0.100000]                                                                                                    Train | Cls Acc: 0.0000% | Loss: 22.4934 | LR: 0.012500 | Margin: 0.400
+Val (Cls):   0%|          | 0/9 [00:00<?, ?it/s]Val (Cls):   0%|          | 0/9 [00:01<?, ?it/s, acc=0.00% (0.00%), loss=22.5603 (22.5603)]Val (Cls):   0%|          | 0/9 [00:01<?, ?it/s, acc=0.00% (0.00%), loss=22.5745 (22.5674)]Val (Cls):   0%|          | 0/9 [00:01<?, ?it/s, acc=0.00% (0.00%), loss=22.6119 (22.5822)]Val (Cls):   0%|          | 0/9 [00:01<?, ?it/s, acc=0.00% (0.00%), loss=22.5697 (22.5791)]Val (Cls):   0%|          | 0/9 [00:01<?, ?it/s, acc=0.00% (0.00%), loss=22.4674 (22.5568)]Val (Cls):   0%|          | 0/9 [00:02<?, ?it/s, acc=0.00% (0.00%), loss=22.6403 (22.5707)]Val (Cls):   0%|          | 0/9 [00:02<?, ?it/s, acc=0.00% (0.00%), loss=22.4494 (22.5534)]Val (Cls):   0%|          | 0/9 [00:02<?, ?it/s, acc=0.00% (0.00%), loss=22.6576 (22.5664)]Val (Cls):   0%|          | 0/9 [00:02<?, ?it/s, acc=0.00% (0.00%), loss=22.6907 (22.5802)]                                                                                           Val (Cls) | Acc: 0.0000% | Loss: 22.5802
+Val (Veri):   0%|          | 0/4 [00:00<?, ?it/s]                                                 Verification Metrics: {'ACC': 57.5, 'EER': 44.19551934825927, 'AUC': 59.86539638842985, 'TPRs': [('TPR@FPR=0.0001', 0.20366598778004072), ('TPR@FPR=0.0005', 0.20366598778004072), ('TPR@FPR=0.001', 0.20366598778004072), ('TPR@FPR=0.005', 1.2219959266802443), ('TPR@FPR=0.05', 9.164969450101832)]}
+Val (Veri) | ACC: 57.5000% | EER: 44.1955%
+Val (Combined) | Score: 27.9022%
+Checkpoint saved at ./checkpoints/smoke_test/best_cls.pth
+Saved best classification model: ./checkpoints/smoke_test/best_cls.pth
+Checkpoint saved at ./checkpoints/smoke_test/best_ret.pth
+Saved best retrieval model: ./checkpoints/smoke_test/best_ret.pth
+Checkpoint saved at ./checkpoints/smoke_test/best_combined.pth
+Saved best combined model: ./checkpoints/smoke_test/best_combined.pth
+Checkpoint saved at ./checkpoints/smoke_test/last.pth
+Saved last epoch model: ./checkpoints/smoke_test/last.pth
+/jet/home/zembower/psc/train.py:1074: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(path, map_location=map_location)
+Checkpoint loaded from ./checkpoints/smoke_test/best_combined.pth (epoch 0)
+/jet/home/zembower/psc/train.py:1240: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  best_ckpt = torch.load(os.path.join(config["checkpoint_dir"], "best_combined.pth"), map_location="cpu")
+Using the EMA weights
+Val (Veri):   0%|          | 0/4 [00:00<?, ?it/s]                                                 Verification Metrics: {'ACC': 57.8, 'EER': 43.991853360488804, 'AUC': 60.25312201153174, 'TPRs': [('TPR@FPR=0.0001', 0.20366598778004072), ('TPR@FPR=0.0005', 0.20366598778004072), ('TPR@FPR=0.001', 0.20366598778004072), ('TPR@FPR=0.005', 0.20366598778004072), ('TPR@FPR=0.05', 11.812627291242363)]}
+Best epoch 1 | Val EER with flip TTA: 43.9919%
+Loaded 43,097 classification test images
+First 3: ['test_000000.jpg', 'test_000001.jpg', 'test_000002.jpg']
+Last 3:  ['test_043152.jpg', 'test_043153.jpg', 'test_043154.jpg']
+Test (Cls):   0%|          | 0/169 [00:00<?, ?it/s]Test (Cls):  92%|█████████▏| 156/169 [01:00<00:05,  2.59it/s]                                                             Test (Veri):   0%|          | 0/20 [00:00<?, ?it/s]                                                   Saved ./checkpoints/smoke_test/submission.csv (copied to ./submission.csv)
+  Classification predictions: 43097
+  Verification scores:        5000
+  Total rows:                  48097
+   ID            Task  Prediction    Usage
+0   0  classification      6610.0  Private
+1   1  classification      6610.0   Public
+2   2  classification      6610.0  Private
+3   3  classification      7615.0   Public
+4   4  classification      6610.0   Public
+SMOKE TEST PASSED
+Done. Submission files are in ./checkpoints/smoke_test

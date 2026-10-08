@@ -2,7 +2,7 @@ _wandb:
     value:
         cli_version: 0.23.1
         e:
-            dfx7qifcg5i6cwfk9hcf6gnr7m5pk02o:
+            yuzdgrq85h1d8n7hleh921vtccqdmy6r:
                 codePath: psc/train.py
                 codePathLocal: psc/train.py
                 cpu_count: 40
@@ -11,20 +11,20 @@ _wandb:
                 disk:
                     /:
                         total: "315926315008"
-                        used: "72861147136"
+                        used: "26744504320"
                 email: jzembowe@andrew.cmu.edu
                 executable: /ocean/projects/cis250019p/mzhang23/TA/envs/IDLF26/bin/python
-                gpu: Tesla V100-SXM2-32GB
+                gpu: Tesla V100-SXM2-16GB
                 gpu_count: 1
                 gpu_nvidia:
                     - architecture: Volta
                       cudaCores: 5120
-                      memoryTotal: "34359738368"
-                      name: Tesla V100-SXM2-32GB
-                      uuid: GPU-114a4204-5985-8310-5326-3ab262925143
-                host: v010.ib.bridges2.psc.edu
+                      memoryTotal: "17179869184"
+                      name: Tesla V100-SXM2-16GB
+                      uuid: GPU-219199e4-e857-14b0-b150-b46f66163959
+                host: v033.ib.bridges2.psc.edu
                 memory:
-                    total: "540673679360"
+                    total: "202445729792"
                 os: Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28
                 program: /jet/home/zembower/psc/train.py
                 python: CPython 3.11.14
@@ -40,33 +40,33 @@ _wandb:
                     job_account: cis250019p
                     job_cpus_per_node: "5"
                     job_gid: "28111"
-                    job_gpus: "4"
-                    job_id: "47408105"
-                    job_name: run2
-                    job_nodelist: v010
+                    job_gpus: "7"
+                    job_id: "47487551"
+                    job_name: run3
+                    job_nodelist: v033
                     job_num_nodes: "1"
                     job_partition: GPU-shared
                     job_qos: gpu
                     job_uid: "104641"
                     job_user: zembower
-                    jobid: "47408105"
+                    jobid: "47487551"
                     localid: "0"
                     nnodes: "1"
                     node_aliases: (null)
                     nodeid: "0"
-                    nodelist: v010
+                    nodelist: v033
                     prio_process: "0"
                     procid: "0"
                     script_context: prolog_task
                     submit_dir: /jet/home/zembower
-                    submit_host: br013.ib.bridges2.psc.edu
-                    task_pid: "65701"
+                    submit_host: br012.ib.bridges2.psc.edu
+                    task_pid: "47840"
                     tasks_per_node: "5"
-                    topology_addr: v010
+                    topology_addr: v033
                     topology_addr_pattern: node
                     working_cluster: bridges2:br003:6810:9728:109
-                startedAt: "2026-10-04T13:16:42.056947Z"
-                writerId: dfx7qifcg5i6cwfk9hcf6gnr7m5pk02o
+                startedAt: "2026-10-07T09:49:50.271013Z"
+                writerId: yuzdgrq85h1d8n7hleh921vtccqdmy6r
         m: []
         python_version: 3.11.14
         t:
@@ -82,10 +82,12 @@ _wandb:
                 - 53
             "3":
                 - 3
+                - 5
                 - 13
                 - 14
                 - 16
                 - 61
+                - 62
             "4": 3.11.14
             "5": 0.23.1
             "8":
@@ -113,15 +115,21 @@ channels:
         - 256
         - 512
 checkpoint_dir:
-    value: ./checkpoints/run2_resnet34_arcface
+    value: ./checkpoints/run3_seresnet34_ema
 data_root:
     value: /local/hw2p2_data
+drop_path:
+    value: 0.1
 dropout:
     value: 0.2
+ema_decay:
+    value: 0.9998
 embedding_dim:
     value: 512
 epochs:
-    value: 50
+    value: 70
+grayscale:
+    value: 0.1
 label_smoothing:
     value: 0
 lr:
@@ -137,7 +145,9 @@ random_erasing:
 resume:
     value: true
 run_name:
-    value: run2_resnet34_arcface
+    value: run3_seresnet34_ema
+se:
+    value: true
 warmup_epochs:
     value: 2
 weight_decay:

@@ -73,15 +73,16 @@ print("Device: ", DEVICE)
 import json
 
 config = {
-    'run_name': 'run2_resnet34_arcface', # Each run gets its own checkpoint folder: checkpoints/<run_name>/
+    'run_name': 'run3_seresnet34_ema', # Each run gets its own checkpoint folder: checkpoints/<run_name>/
     'data_root': os.path.join(os.environ["LOCAL"], "hw2p2_data") if "LOCAL" in os.environ else "./hw2p2_data",
     'batch_size': 256, # Increase this if your GPU can handle it
     'lr': 0.1,
     'warmup_epochs': 2, # Linear LR warmup, then cosine decay to 0 (stepped every batch)
-    'epochs': 50,
+    'epochs': 70,
     'num_classes': 8631, # Dataset contains 8631 classes for classification, reduce this number if you want to train on a subset, but only for train dataset and not on val dataset
     'augument': True,
     'random_erasing': 0.25, # Probability of erasing a patch (simulates occlusion)
+    'grayscale': 0.1, # Probability of converting to grayscale (lighting/colour robustness)
     'weight_decay': 5e-4, # Not applied to BatchNorm / bias parameters
     'label_smoothing': 0.0,
     # Model: ResNet-34 layout adapted to 112x112 faces (7x7 final map), BN embedding head
@@ -89,6 +90,9 @@ config = {
     'channels': [64, 128, 256, 512],
     'embedding_dim': 512,
     'dropout': 0.2, # Before the embedding projection
+    'se': True, # Squeeze-and-Excitation channel attention in every residual block (writeup 4.4, SEResNet)
+    'drop_path': 0.1, # Stochastic depth: max prob. of skipping a residual branch (deepest block), linear from 0
+    'ema_decay': 0.9998, # Exponential moving average of the weights (~5k-step horizon); EMA weights are evaluated and submitted
     # Loss: ArcFace additive angular margin, margin ramped up from 0 over the first epochs
     'arcface_s': 32.0,
     'arcface_m': 0.4,
@@ -96,6 +100,7 @@ config = {
     'resume': True, # Continue from checkpoints/<run_name>/last.pth if it exists (PSC sessions are capped at 8h)
     'num_workers': 0 if os.name == 'nt' else min(8, len(os.sched_getaffinity(0))), # Windows notebooks can't pickle notebook-defined Datasets
 }
+# To reproduce run two instead: run_name='run2_resnet34_arcface', epochs=50, grayscale=0, se=False, drop_path=0, ema_decay=0
 config['checkpoint_dir'] = os.path.join("./checkpoints", config['run_name'])
 os.makedirs(config['checkpoint_dir'], exist_ok=True)
 with open(os.path.join(config['checkpoint_dir'], "run_config.json"), "w") as f:
@@ -133,6 +138,8 @@ def create_transforms(image_size: int = 112, augment: bool = True) -> T.Compose:
             T.RandomHorizontalFlip(p=0.5),
             T.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
         ])
+        if config.get('grayscale', 0) > 0:
+            transform_list.append(T.RandomGrayscale(p=config['grayscale']))
 
     # Step 3: Standard normalization for image recognition tasks
     # The Normalize transformation requires mean and std values for each channel (R, G, B).
@@ -383,19 +390,51 @@ ver_test_loader  = DataLoader(ver_test_dataset, shuffle=False, **loader_kwargs)
 
 
 # ---- notebook cell: class Network(nn.Module) ----
+class SEModule(nn.Module):
+    """
+    Squeeze-and-Excitation: global-average-pool each channel ("squeeze"), pass through a small
+    bottleneck MLP and a sigmoid ("excitation"), then rescale the channels. Lets the block
+    emphasize the feature maps that matter for this face. ~1% extra parameters.
+    """
+
+    def __init__(self, channels: int, reduction: int = 16):
+        super().__init__()
+        self.fc = nn.Sequential(
+            nn.AdaptiveAvgPool2d(1),
+            nn.Conv2d(channels, channels // reduction, kernel_size=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(channels // reduction, channels, kernel_size=1),
+            nn.Sigmoid(),
+        )
+
+    def forward(self, x):
+        return x * self.fc(x)
+
+
+def drop_path(x, p: float, training: bool):
+    """Stochastic depth: during training, zero the whole residual branch for a random subset of samples."""
+    if not training or p == 0.0:
+        return x
+    keep = 1.0 - p
+    mask = x.new_empty(x.shape[0], 1, 1, 1).bernoulli_(keep)
+    return x * mask / keep
+
+
 class BasicBlock(nn.Module):
     """
     ResNet basic block: conv3x3-BN-ReLU-conv3x3-BN plus identity skip.
     When the block downsamples (stride 2) or widens, the skip uses a 1x1 strided conv + BN.
     """
 
-    def __init__(self, in_ch: int, out_ch: int, stride: int = 1):
+    def __init__(self, in_ch: int, out_ch: int, stride: int = 1, se: bool = False, drop_path: float = 0.0):
         super().__init__()
         self.conv1 = nn.Conv2d(in_ch, out_ch, kernel_size=3, stride=stride, padding=1, bias=False)
         self.bn1 = nn.BatchNorm2d(out_ch)
         self.conv2 = nn.Conv2d(out_ch, out_ch, kernel_size=3, stride=1, padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(out_ch)
         self.relu = nn.ReLU(inplace=True)
+        self.se = SEModule(out_ch) if se else None
+        self.drop_path = drop_path
 
         self.shortcut = nn.Identity()
         if stride != 1 or in_ch != out_ch:
@@ -407,6 +446,9 @@ class BasicBlock(nn.Module):
     def forward(self, x):
         out = self.relu(self.bn1(self.conv1(x)))
         out = self.bn2(self.conv2(out))
+        if self.se is not None:
+            out = self.se(out)
+        out = drop_path(out, self.drop_path, self.training)
         return self.relu(out + self.shortcut(x))
 
 
@@ -439,7 +481,8 @@ class Network(nn.Module):
     """
 
     def __init__(self, num_classes: int, blocks=(3, 4, 6, 3), channels=(64, 128, 256, 512),
-                 embedding_dim: int = 512, dropout: float = 0.2, s: float = 32.0):
+                 embedding_dim: int = 512, dropout: float = 0.2, s: float = 32.0,
+                 se: bool = False, drop_path: float = 0.0):
         super().__init__()
         self.stem = nn.Sequential(
             nn.Conv2d(3, channels[0], kernel_size=3, stride=1, padding=1, bias=False),
@@ -449,9 +492,15 @@ class Network(nn.Module):
 
         stages = []
         in_ch = channels[0]
+        # Stochastic depth grows linearly with depth: early blocks are almost never dropped
+        n_total = sum(blocks)
+        dp = [drop_path * i / max(1, n_total - 1) for i in range(n_total)]
+        k = 0
         for n_blocks, out_ch in zip(blocks, channels):
-            layers = [BasicBlock(in_ch, out_ch, stride=2)]
-            layers += [BasicBlock(out_ch, out_ch, stride=1) for _ in range(n_blocks - 1)]
+            layers = []
+            for b in range(n_blocks):
+                layers.append(BasicBlock(in_ch if b == 0 else out_ch, out_ch, stride=2 if b == 0 else 1, se=se, drop_path=dp[k]))
+                k += 1
             stages.append(nn.Sequential(*layers))
             in_ch = out_ch
         self.stages = nn.Sequential(*stages)
@@ -521,6 +570,8 @@ model = Network(
     embedding_dim=config["embedding_dim"],
     dropout=config["dropout"],
     s=config["arcface_s"],
+    se=config.get("se", False),
+    drop_path=config.get("drop_path", 0.0),
 ).to(DEVICE).to(memory_format=torch.channels_last)
 
 n_params = sum(p.numel() for p in model.parameters())
@@ -591,6 +642,16 @@ optimizer = optim.SGD(
      {'params': no_decay, 'weight_decay': 0.0}],
     lr=config['lr'], momentum=0.9, nesterov=True,
 )
+
+# ---------------------------------------------------
+# Weight EMA
+# ---------------------------------------------------
+
+# Keeps an exponential moving average of the weights (and BatchNorm statistics), updated every step.
+# The average sits in a flatter, better-generalizing region than the last SGD iterate; it is what we
+# validate, checkpoint as the best model and submit. The raw model keeps training as usual.
+from torch.optim.swa_utils import AveragedModel, get_ema_multi_avg_fn
+ema = AveragedModel(model, multi_avg_fn=get_ema_multi_avg_fn(config['ema_decay']), use_buffers=True) if config.get('ema_decay') else None
 
 # ---------------------------------------------------
 # Learning Rate Scheduler
@@ -736,6 +797,7 @@ def train_epoch(
     device,
     criterion,
     scheduler=None,
+    ema=None,
 ):
     """
     Runs one training epoch.
@@ -748,6 +810,7 @@ def train_epoch(
         device (torch.device): Training device
         criterion (callable): Loss function
         scheduler (LRScheduler, optional): Stepped once per batch
+        ema (AveragedModel, optional): Weight EMA, updated after every optimizer step
 
     Returns:
         tuple: (avg_accuracy, avg_loss)
@@ -793,6 +856,8 @@ def train_epoch(
         scaler.update()
         if scheduler is not None:
             scheduler.step()
+        if ema is not None:
+            ema.update_parameters(model)
 
         # Metrics
         batch_loss = loss.item()
@@ -963,7 +1028,7 @@ checkpoint_dir = config["checkpoint_dir"]
 os.makedirs(checkpoint_dir, exist_ok=True)
 
 
-def save_model(model, optimizer, scheduler, metrics, epoch, path):
+def save_model(model, optimizer, scheduler, metrics, epoch, path, ema=None):
     """
     Saves model, optimizer, scheduler, and training metrics to a checkpoint.
 
@@ -974,6 +1039,7 @@ def save_model(model, optimizer, scheduler, metrics, epoch, path):
         metrics (dict): Dictionary of tracked metrics
         epoch (int): Current epoch
         path (str): Path to save checkpoint
+        ema (AveragedModel, optional): Weight EMA; its weights are stored as 'ema_state_dict'
     """
     torch.save(
         {
@@ -983,6 +1049,7 @@ def save_model(model, optimizer, scheduler, metrics, epoch, path):
             "metrics": metrics,
             "epoch": epoch,
             "config": config,
+            "ema_state_dict": ema.module.state_dict() if ema is not None else None,
         },
         path,
     )
@@ -1034,6 +1101,11 @@ if config["resume"] and os.path.exists(last_path):
     model, optimizer, scheduler, last_epoch, last_metrics = load_model(
         model, optimizer, scheduler, path=last_path, device=DEVICE
     )
+    if ema is not None:
+        ckpt = torch.load(last_path, map_location="cpu")  # CPU: don't hold a second copy of the checkpoint on the GPU
+        ema.module.load_state_dict(ckpt["ema_state_dict"])
+        del ckpt
+        ema.n_averaged.fill_(1)  # >0, so the next update averages instead of overwriting with the raw weights
     start_epoch = last_epoch + 1
     best_cls_acc = last_metrics.get("best_cls_acc", 0.0)
     best_ret_acc = last_metrics.get("best_ret_acc", 0.0)
@@ -1049,7 +1121,7 @@ for epoch in range(start_epoch, config["epochs"]):
     # Train (scheduler steps every batch inside train_epoch)
     # -----------------------------
     train_cls_acc, train_loss = train_epoch(
-        model, cls_train_loader, optimizer, scaler, DEVICE, criterion, scheduler
+        model, cls_train_loader, optimizer, scaler, DEVICE, criterion, scheduler, ema
     )
     print(
         f"Train | Cls Acc: {train_cls_acc:.4f}% | Loss: {train_loss:.4f} | LR: {curr_lr:.6f} | Margin: {criterion.m:.3f}"
@@ -1062,11 +1134,14 @@ for epoch in range(start_epoch, config["epochs"]):
         "arcface_m": criterion.m,
     }
 
+    # Validate (and pick the best checkpoint by) the EMA weights when EMA is on
+    eval_model = ema.module if ema is not None else model
+
     # -----------------------------
     # Classification Validation
     # -----------------------------
     valid_cls_acc, valid_loss = valid_epoch_cls(
-        model, cls_val_loader, DEVICE, criterion
+        eval_model, cls_val_loader, DEVICE, criterion
     )
 
     print(f"Val (Cls) | Acc: {valid_cls_acc:.4f}% | Loss: {valid_loss:.4f}")
@@ -1079,7 +1154,7 @@ for epoch in range(start_epoch, config["epochs"]):
     # -----------------------------
     # Verification / Retrieval Validation
     # -----------------------------
-    valid_ret_metrics = valid_epoch_ver(model, ver_val_loader, DEVICE)
+    valid_ret_metrics = valid_epoch_ver(eval_model, ver_val_loader, DEVICE)
     valid_ret_acc = valid_ret_metrics["ACC"]
     valid_eer = valid_ret_metrics["EER"]
     print(f"Val (Veri) | ACC: {valid_ret_acc:.4f}% | EER: {valid_eer:.4f}%")
@@ -1110,21 +1185,21 @@ for epoch in range(start_epoch, config["epochs"]):
     if valid_cls_acc >= best_cls_acc:
         best_cls_acc = valid_cls_acc
         best_cls_path = os.path.join(config["checkpoint_dir"], "best_cls.pth")
-        save_model(model, optimizer, scheduler, metrics, epoch, best_cls_path)
+        save_model(model, optimizer, scheduler, metrics, epoch, best_cls_path, ema)
         print(f"Saved best classification model: {best_cls_path}")
 
     # Save best retrieval model
     if valid_ret_acc >= best_ret_acc:
         best_ret_acc = valid_ret_acc
         best_ret_path = os.path.join(config["checkpoint_dir"], "best_ret.pth")
-        save_model(model, optimizer, scheduler, metrics, epoch, best_ret_path)
+        save_model(model, optimizer, scheduler, metrics, epoch, best_ret_path, ema)
         print(f"Saved best retrieval model: {best_ret_path}")
 
     # Save best combined model
     if valid_combined_score >= best_combined_score:
         best_combined_score = valid_combined_score
         best_combined_path = os.path.join(config["checkpoint_dir"], "best_combined.pth")
-        save_model(model, optimizer, scheduler, metrics, epoch, best_combined_path)
+        save_model(model, optimizer, scheduler, metrics, epoch, best_combined_path, ema)
         if "run" in globals() and run is not None:
             wandb.save(best_combined_path, base_path=os.path.dirname(config["checkpoint_dir"]))
         print(f"Saved best combined model: {best_combined_path}")
@@ -1135,7 +1210,7 @@ for epoch in range(start_epoch, config["epochs"]):
         "best_ret_acc": best_ret_acc,
         "best_combined_score": best_combined_score,
     })
-    save_model(model, optimizer, scheduler, metrics, epoch, last_path)
+    save_model(model, optimizer, scheduler, metrics, epoch, last_path, ema)
     print(f"Saved last epoch model: {last_path}")
 
 
@@ -1152,10 +1227,21 @@ from utils import (
     write_submission_bundle,
 )
 
+# Training is finished: free the optimizer state, EMA copy and cached blocks before inference
+for _name in ("optimizer", "scheduler", "scaler", "ema"):
+    globals().pop(_name, None)
+gc.collect()
+torch.cuda.empty_cache()
+
 # Load this run's best combined checkpoint and evaluate with flip TTA
 model, _, _, best_epoch, _ = load_model(
     model, path=os.path.join(config["checkpoint_dir"], "best_combined.pth"), device=DEVICE
 )
+best_ckpt = torch.load(os.path.join(config["checkpoint_dir"], "best_combined.pth"), map_location="cpu")
+if best_ckpt.get("ema_state_dict") is not None:
+    model.load_state_dict(best_ckpt["ema_state_dict"])  # the EMA weights are the ones that were validated
+    print("Using the EMA weights")
+del best_ckpt
 tta_model = FlipTTA(model).eval()
 tta_ver = valid_epoch_ver(tta_model, ver_val_loader, DEVICE)
 print(f"Best epoch {best_epoch + 1} | Val EER with flip TTA: {tta_ver['EER']:.4f}%")

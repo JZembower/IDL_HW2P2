@@ -9,9 +9,9 @@ Cutoffs: very low 80, low 88, medium 92, high 95.
 |---|---|---|---|---|---|---|
 | `run1_baseline_cnn5` | 5-layer CNN, 15.1M params | CE + label smoothing 0.1, 20 epochs | 79.89 | 5.30 | 87.30 | 87.33 |
 | `run2_resnet34_arcface` | ResNet-34 layout, 26.0M params | ArcFace (s=32, m=0.4), 50 epochs, flip TTA; best epoch 47 | 93.21 | 3.06 | 95.08 | **95.74** |
-| `run3_seresnet34_ema` | SE-ResNet-34, 26.1M params | Run two + stochastic depth 0.1, weight EMA, grayscale aug, 70 epochs | — | — | — | — |
+| `run3_seresnet34_ema` | SE-ResNet-34, 26.1M params | Run two + stochastic depth 0.1, weight EMA, grayscale aug, 70 epochs; best epoch 59 (EMA) | 94.19 | 2.04 | 96.08 | **96.41** |
 
-The notebook currently configures **run three**, which targets run two's weaknesses: late overfitting (train 98% vs val 93%) and verification EER that drifted from 2.04% (epoch 20) to 3.46% (epoch 50). Every run-three feature is a config switch, so the notebook still reproduces run two (see the comment in the Config cell). Run two's results are recorded in [checkpoints/run2_resnet34_arcface/results.json](checkpoints/run2_resnet34_arcface/results.json). Run instructions are in [submission.md](submission.md).
+The notebook currently configures **run three**, the final submission (Kaggle public 96.41). It targeted run two's weaknesses: late overfitting (train 98% vs val 93%) and verification EER that drifted from 2.04% (epoch 20) to 3.46% (epoch 50). Every run-three feature is a config switch, so the notebook still reproduces run two (see the comment in the Config cell). Run two's results are recorded in [checkpoints/run2_resnet34_arcface/results.json](checkpoints/run2_resnet34_arcface/results.json). Run instructions are in [submission.md](submission.md).
 
 ## Run layout
 Each run writes only to its own folder, `checkpoints/<run_name>/`, set by `config['run_name']`:

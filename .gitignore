@@ -5,4 +5,19 @@ hw2p2_data/
 submission.md
 *__pycache__*
 *.pth
-run*-*.out
+/run*-*.out
+submission/
+handin.zip
+ACKNOWLEDGEMENT.txt
+README.txt
+model_metadata.json
+wandb_export.pkl
+kaggle_metadata.json
+HW2P2_final_submission.zip
+HWP2-Submission-Backend-Student/
+# leftover clone of the course utils (identical to utils/, which is tracked)
+HW2P2-Student-Utils/
+# wandb copies the newest run here on Windows; the real run-* folders are tracked
+wandb/latest-run/
+wandb/debug.log
+wandb/debug-internal.log
